@@ -1,0 +1,90 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "WEPESI API V1",
+        "description": "This is a public Api",
+        "contact": {}
+    },  
+    "hoster": "localhost:3578",
+    "basePath": "/api/v1",
+    "securityDefinitions": {},
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/users/{offset}/{limit}/pages": {
+            "get": {
+                "description": "Display all users registered by Defining the Offset and the limit of data to be display",
+                "summary": "Get Users",
+                "tags": [
+                    "All Endpoints"
+                ],
+                "operationId": "get-User",
+                "deprecated": false,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": true,
+                        "default": "{token}",
+                        "type": "string"
+                    },
+                    {
+                        "name": "App",
+                        "in": "header",
+                        "required": true,
+                        "default": "Admin",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Key",
+                        "in": "header",
+                        "required": true,
+                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "path",
+                        "required": true,
+                        "default": "0",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "required": true,
+                        "default": "5",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "All Endpoints",
+            "description": "all endpoints return objects in JSON format"
+        }
+    ]
+}

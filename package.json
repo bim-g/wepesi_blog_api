@@ -1,0 +1,26 @@
+{
+  "name": "mongoose",
+  "version": "1.0.0",
+  "description": "Blog api with mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "wepesi article",
+    "wepesi mangoose",
+    "wepesi mongodb",
+    "ibmussa",
+    "wepesi blog",
+    "wepesi api"
+  ],
+  "author": "Ibrahim Mussa Boss",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-ui": "^3.46.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
