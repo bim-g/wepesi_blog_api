@@ -20,7 +20,7 @@
         "application/json"
     ],
     "paths": {
-        "/users/{offset}/{limit}/pages": {
+        "/users": {
             "get": {
                 "description": "Display all users registered by Defining the Offset and the limit of data to be display",
                 "summary": "Get Users",
@@ -39,37 +39,99 @@
                     {
                         "name": "auth-token",
                         "in": "header",
-                        "required": true,
+                        "required": false,
                         "default": "{token}",
                         "type": "string"
                     },
                     {
                         "name": "App",
                         "in": "header",
-                        "required": true,
+                        "required": false,
                         "default": "Admin",
                         "type": "string"
                     },
                     {
                         "name": "Key",
                         "in": "header",
-                        "required": true,
+                        "required": false,
                         "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
                         "type": "string"
                     },
                     {
                         "name": "offset",
                         "in": "path",
-                        "required": true,
+                        "required": false,
                         "default": "0",
                         "type": "integer"
                     },
                     {
                         "name": "limit",
                         "in": "path",
-                        "required": true,
+                        "required": false,
                         "default": "5",
                         "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/users/create": {
+            "post": {
+                "description": "create a new user with all necessary information ",
+                "summary": "create a user",
+                "tags": [
+                    "All Endpoints"
+                ],
+                "operationId": "create-a-User",
+                "deprecated": false,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [                    
+                    {
+                        "name": "Key",
+                        "in": "header",
+                        "required": false,
+                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
+                        "type": "string"
+                    },
+                    {
+                        "name": "fist_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "sexe",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
                     }
                 ],
                 "responses": {
