@@ -68,6 +68,43 @@ const userController={
             Response: users
         });
     },
+    deleteUsersById: async (req, res) => {
+        let users = await Users.remove({_id:req.params.user_id}).then().catch(er => {
+            return res.status(200).json({
+                status: 500,
+                message: "error server"
+            });
+        });
+        let message = users.deletedCount==1?"delete success fully":"failed to delete";
+        res.status(200).json({
+            status: 200,
+            Response: message
+        });
+    },
+    updateUsersById: async (req, res) => {
+        let {
+            fist_name,
+            last_name,
+            sexe
+        }=req.body;
+        let users = await Users.updateOne({
+                _id: req.params.user_id
+            }, {
+                fist_name,
+                last_name,
+                sexe
+            }).then().catch(er => {
+            return res.status(200).json({
+                status: 500,
+                message: "error server"
+            });
+        });
+        let message = users.nModified==1?"modified success fully":"failed to modified";
+        res.status(200).json({
+            status: 200,
+            Response: message
+        });
+    },
 };
 
 module.exports=userController;

@@ -259,6 +259,129 @@
                     }
                 }
             }
+        },
+        "/users/{user_id}/delete": {
+            "delete": {
+                "description": "Remove a specific user  by ID",
+                "summary": "Remove a Users by ID",
+                "tags": [
+                    "All Endpoints"
+                ],
+                "operationId": "remove_User_byID",
+                "deprecated": false,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": false,
+                        "default": "{token}",
+                        "type": "string"
+                    },
+                    {
+                        "name": "App",
+                        "in": "header",
+                        "required": false,
+                        "default": "Admin",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Key",
+                        "in": "header",
+                        "required": false,
+                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "default": "60d231964cd1bc46bc3c2e8d",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/users/{user_id}/update": {
+            "patch": {
+                "description": "Update a specific user  by ID",
+                "summary": "Update a Users by ID",
+                "tags": [
+                    "All Endpoints"
+                ],
+                "operationId": "update_User_byID",
+                "deprecated": false,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": false,
+                        "default": "{token}",
+                        "type": "string"
+                    },
+                    {
+                        "name": "App",
+                        "in": "header",
+                        "required": false,
+                        "default": "Admin",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Key",
+                        "in": "header",
+                        "required": false,
+                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fist_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "sexe",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
         }
     },
     "tags": [
