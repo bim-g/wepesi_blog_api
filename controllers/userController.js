@@ -1,4 +1,7 @@
 const Users = require("../models/Users");
+const jwt=require("jsonwebtoken");
+const bcrypt=require("bcrypt");
+// 
 const userController={
     getUsers:async(req,res)=>{
         let users=await Users.find().then().catch(er=>{
@@ -37,7 +40,7 @@ const userController={
                 last_name:last_name,
                 sexe:sexe,
                 username:username,
-                password:password
+                password: await bcrypt.hash(password, 10)
             });
       
             let saveduser=await user.save().then().catch(er=>{                
@@ -54,22 +57,46 @@ const userController={
     },
     loginUsers: async (req, res) => {
         let {username,password}=req.body;
-        let users = await Users.find({
-                username:username,
-                password:password
+        let users = await Users.findOne({
+                username:username
             }).then().catch(er => {
             return res.status(200).json({
                 status: 500,
                 message: "error server"
             });
         });
-        res.status(200).json({
-            status: 200,
-            Response: users
+        if(users){
+            let is_logged = await bcrypt.compare(password, users.password);
+            if(is_logged){
+                const token = jwt.sign({
+                    user_id: users._id,
+                    username: users.username
+                },
+                process.env.TOKEN_SECRET_KEY, {
+                    expiresIn: process.env.TOKEN_EXPIRE
+                });
+                return res.status(200).json({
+                    status: 200,
+                    Response: {
+                        token,
+                        users
+                    }
+                });
+            }
+            return res.status(200).json({
+                status: 404,
+                message: "username or password not correct"
+            });
+        }
+        return res.status(200).json({
+            status: 404,
+            message: "user does not exist"
         });
     },
     deleteUsersById: async (req, res) => {
-        let users = await Users.remove({_id:req.params.user_id}).then().catch(er => {
+        let users = await Users.deleteOne({
+                _id: req.params.user_id
+            }).then().catch(er => {
             return res.status(200).json({
                 status: 500,
                 message: "error server"

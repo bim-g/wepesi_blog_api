@@ -35,14 +35,7 @@
                 "consumes": [
                     "application/x-www-form-urlencoded"
                 ],
-                "parameters": [
-                    {
-                        "name": "Key",
-                        "in": "header",
-                        "required": false,
-                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
-                        "type": "string"
-                    },                    
+                "parameters": [     
                     {
                         "name": "username",
                         "in": "formData",
@@ -83,7 +76,7 @@
                     {
                         "name": "auth-token",
                         "in": "header",
-                        "required": false,
+                        "required": true,
                         "default": "{token}",
                         "type": "string"
                     },
@@ -143,22 +136,8 @@
                     {
                         "name": "auth-token",
                         "in": "header",
-                        "required": false,
+                        "required": true,
                         "default": "{token}",
-                        "type": "string"
-                    },
-                    {
-                        "name": "App",
-                        "in": "header",
-                        "required": false,
-                        "default": "Admin",
-                        "type": "string"
-                    },
-                    {
-                        "name": "Key",
-                        "in": "header",
-                        "required": false,
-                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
                         "type": "string"
                     },
                     {
@@ -196,29 +175,8 @@
                     {
                         "name": "auth-token",
                         "in": "header",
-                        "required": false,
+                        "required": true,
                         "default": "{token}",
-                        "type": "string"
-                    },
-                    {
-                        "name": "App",
-                        "in": "header",
-                        "required": false,
-                        "default": "Admin",
-                        "type": "string"
-                    },
-                    {
-                        "name": "Key",
-                        "in": "header",
-                        "required": false,
-                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
-                        "type": "string"
-                    },                 
-                    {
-                        "name": "Key",
-                        "in": "header",
-                        "required": false,
-                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
                         "type": "string"
                     },
                     {
@@ -279,22 +237,8 @@
                     {
                         "name": "auth-token",
                         "in": "header",
-                        "required": false,
+                        "required": true,
                         "default": "{token}",
-                        "type": "string"
-                    },
-                    {
-                        "name": "App",
-                        "in": "header",
-                        "required": false,
-                        "default": "Admin",
-                        "type": "string"
-                    },
-                    {
-                        "name": "Key",
-                        "in": "header",
-                        "required": false,
-                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
                         "type": "string"
                     },
                     {
@@ -332,22 +276,8 @@
                     {
                         "name": "auth-token",
                         "in": "header",
-                        "required": false,
+                        "required": true,
                         "default": "{token}",
-                        "type": "string"
-                    },
-                    {
-                        "name": "App",
-                        "in": "header",
-                        "required": false,
-                        "default": "Admin",
-                        "type": "string"
-                    },
-                    {
-                        "name": "Key",
-                        "in": "header",
-                        "required": false,
-                        "default": "YtLddXUVwoAtK0IbB6ugGNENizaAEqm5bWUgBdfvuwZ0e3eSMRx9DMYPdh55nrmNW7Y5CLdOchGFR9huUuOS39ySsSON83Xbr9vuYpSGhxvsAcXUgJlVhPlFhdQEYNhVTpC8jgjkghjhka787KJHJKHujyuhsa6",
                         "type": "string"
                     },
                     {

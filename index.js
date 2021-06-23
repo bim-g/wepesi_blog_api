@@ -40,10 +40,8 @@ app.use('**', (req, res, next) => {
 /**
  * test connection on mongodb
  */
-mangoose.connect(process.env.DB_CONFIG,()=>{
+mangoose.connect(process.env.DB_CONFIG, { useNewUrlParser: true }, () => {
     console.log("connection to database success");
-}).catch(er=>{
-    console.error(er);
 });
 let port = process.env.PORT || 3578;
 app.listen(port,()=>{
