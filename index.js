@@ -9,9 +9,18 @@ const v1= require("./route/v1");
 // 
 
 const app=express();
+// 
+app.use(express.json());
+app.use(express.urlencoded({extends:true}));
 app.use(express.static(path.join(__dirname, 'public')));
+/**
+ * swagger doc api
+ */
 app.use("/api/api-doc/v1", swaggerUi.serve, swaggerUi.setup(docs));
-app.use("api/",v1);
+/**
+ * api routing
+ */
+app.use("/api/v1",v1);
 app.get("/",(req,res)=>{
     res.status(200).json({
         status:200,
@@ -31,10 +40,8 @@ app.use('**', (req, res, next) => {
 /**
  * test connection on mongodb
  */
-mangoose.connect(process.env.DB_CONFIG,()=>{
+mangoose.connect(process.env.DB_CONFIG, { useNewUrlParser: true }, () => {
     console.log("connection to database success");
-}).catch(er=>{
-    console.error(er);
 });
 let port = process.env.PORT || 3578;
 app.listen(port,()=>{

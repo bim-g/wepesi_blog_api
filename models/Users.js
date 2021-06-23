@@ -9,7 +9,7 @@ const UserSchema=mongoose.Schema({
         type:String,
         required:true
     },
-    sexe_name:{
+    sexe:{
         type:String,
         required:true
     },
